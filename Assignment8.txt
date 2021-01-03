@@ -1,0 +1,51 @@
+2) // Insert new number into MyStack 
+    void push(Integer x) 
+    { 
+        if (s.isEmpty()) 
+        { 
+            minEle = x; 
+            s.push(x); 
+            System.out.println("Number Inserted: " + x); 
+            return; 
+        } 
+        if (x < minEle) 
+        { 
+            s.push(2*x - minEle); 
+            minEle = x; 
+        } 
+        else
+            s.push(x); 
+        System.out.println("Number Inserted: " + x); 
+    } 
+}
+// Removes the top element from MyStack 
+    void pop() 
+    { 
+        if (s.isEmpty()) 
+        { 
+            System.out.println("Stack is empty"); 
+            return; 
+        } 
+        System.out.print("Top Most Element Removed: "); 
+        Integer t = s.pop(); 
+        if (t < minEle) 
+        { 
+            System.out.println(minEle); 
+            minEle = 2*minEle - t; 
+        } 
+  
+        else
+            System.out.println(t); 
+    } 
+void getMin() 
+    { 
+        if (s.empty()) 
+            cout << "Stack is empty\n"; 
+        else
+            cout <<"Minimum Element in the stack is: "
+                 << minEle << "\n"; 
+    } 
+  
+  
+
+ 
